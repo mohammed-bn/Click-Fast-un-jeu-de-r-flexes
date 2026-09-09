@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Fast!</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">CLICK <span>FAST!</span></span>
+        </div>
+        <nav>
+            <a href="#" class="active">Accueil</a>
+            <a href="jeux.html">Jouer</a>
+            <a href="#">Records</a>
+            <a href="#">Historique</a>
+        </nav>
+    </header>
+
+    <!-- ============================================
+    MAIN - CONTENU PRINCIPAL
+    ============================================ -->
+    <main>
+        <h1>Teste tes <span class="highlight">réflexes</span></h1>
+        <p class="subtitle">Clique sur la cible le plus vite possible et bats ton record !</p>
+
+        <!-- BOUTON START -->
+        <button class="btn-start" id="startBtn">
+            <i class="fas fa-play"></i> Démarrer
+        </button>
+
+        <p class="hint">⚡ Prêt à relever le défi ?</p>
+    </main>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer>
+        <p>
+            <i class="fas fa-bolt"></i>
+            Click Fast! - Le jeu de réflexes ultime
+            <i class="fas fa-heart heart"></i>
+        </p>
+    </footer>
+    <script src="ScriptJs/main.js"></script>
+    <!-- <script>
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ---------- BOUTON START ----------
+            const startBtn = document.getElementById('startBtn');
+
+            startBtn.addEventListener('click', function() {
+                // Animation au clic
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Chargement...';
+                this.disabled = true;
+
+            });
+
+            // ---------- SURVOL DU BOUTON ----------
+            startBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+
+            startBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+
+            // ---------- NAVIGATION ----------
+            const navLinks = document.querySelectorAll('nav a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Retirer la classe active de tous les liens
+                    navLinks.forEach(l => l.classList.remove('active'));
+
+                    // Ajouter la classe active au lien cliqué
+                    this.classList.add('active');
+
+                    // Message pour les liens (hors Accueil)
+                    if (this.textContent.trim() !== 'Accueil') {
+                        alert(`🔜 Page "${this.textContent.trim()}" en cours de développement...`);
+                    }
+                });
+            });
+
+            console.log('⚡ Click Fast! - Page d\'accueil chargée');
+        });
+    </script> -->
+
+</body>
+</html>
