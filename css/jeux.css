@@ -1,0 +1,389 @@
+/* ============================================
+   AIM TRAINER - STYLE SIMPLIFIÉ
+   ============================================ */
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   GAME CONTAINER
+   ============================================ */
+.game-container {
+    background: #111;
+    padding: 30px 40px 40px;
+    border-radius: 20px;
+    border: 2px solid #ff6b00;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    text-align: center;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #222;
+}
+
+.game-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff6b00;
+}
+
+.timer-box {
+    font-size: 18px;
+    font-weight: 600;
+    color: #888;
+    background: #1a1a1a;
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid #2a2a2a;
+}
+
+.timer-box #timer {
+    color: #ff6b00;
+    font-size: 22px;
+}
+
+/* ============================================
+   BOARD (grille de cibles)
+   ============================================ */
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0 30px;
+    min-height: 300px;
+}
+
+/* Cellules de la grille */
+.cell {
+    background: #1a1a1a;
+    border-radius: 12px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid #222;
+    user-select: none;
+}
+
+.cell:hover {
+    border-color: #444;
+}
+
+/* Cible active (la bonne à cliquer) */
+.cell.target {
+    background: #ff6b00;
+    border-color: #ff6b00;
+    box-shadow: 0 0 30px rgba(255, 107, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.cell.target:hover {
+    background: #ff8c00;
+    box-shadow: 0 0 40px rgba(255, 107, 0, 0.6);
+}
+
+/* Clic réussi (feedback visuel) */
+.cell.hit {
+    background: #00cc44;
+    border-color: #00cc44;
+    box-shadow: 0 0 30px rgba(0, 204, 68, 0.4);
+}
+
+/* Clic raté (feedback visuel) */
+.cell.miss {
+    background: #cc0033;
+    border-color: #cc0033;
+    box-shadow: 0 0 30px rgba(204, 0, 51, 0.4);
+}
+
+/* Clic ignoré (pas la cible) */
+.cell.ignore {
+    background: #333;
+    border-color: #555;
+}
+
+/* ============================================
+   BOUTONS
+   ============================================ */
+.btn-primary {
+    display: inline-block;
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #ff6b00, #e85d00);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 30px rgba(255, 107, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(255, 107, 0, 0.5);
+    background: linear-gradient(135deg, #ff8c00, #ff6b00);
+}
+
+.btn-primary:active {
+    transform: translateY(0px);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn-start {
+    display: inline-block;
+    padding: 12px 35px;
+    background: transparent;
+    color: #ff6b00;
+    border: 2px solid #ff6b00;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+}
+
+.btn-start:hover {
+    background: #ff6b00;
+    color: #fff;
+    box-shadow: 0 4px 30px rgba(255, 107, 0, 0.3);
+}
+
+/* ============================================
+   RESULTS CARD
+   ============================================ */
+.results-card {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin: 25px 0 15px;
+    border: 1px solid #222;
+}
+
+.results-card h3 {
+    font-size: 16px;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+}
+
+.stats-grid p {
+    font-size: 14px;
+    color: #aaa;
+    padding: 6px 0;
+    border-bottom: 1px solid #222;
+}
+
+.stats-grid p span {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6b00;
+    border-radius: 10px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablette */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .game-header h1 {
+        font-size: 22px;
+    }
+
+    .timer-box {
+        font-size: 15px;
+        padding: 6px 15px;
+    }
+
+    #board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        min-height: 200px;
+    }
+
+    .btn-primary {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 15px;
+    }
+
+    .stats-grid p {
+        font-size: 13px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .game-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .game-header h1 {
+        font-size: 20px;
+    }
+
+    .timer-box {
+        font-size: 14px;
+        padding: 4px 14px;
+        align-self: flex-start;
+    }
+
+    #board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        min-height: 180px;
+    }
+
+    .cell {
+        font-size: 20px;
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        padding: 10px 24px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .btn-start {
+        padding: 10px 24px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .results-card {
+        padding: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 10px;
+    }
+
+    .stats-grid p {
+        font-size: 12px;
+        padding: 4px 0;
+    }
+
+    .results-card h3 {
+        font-size: 13px;
+    }
+}
+
+/* Très petit écran */
+@media (max-width: 360px) {
+    .game-container {
+        padding: 10px;
+    }
+
+    .game-header h1 {
+        font-size: 17px;
+    }
+
+    .timer-box {
+        font-size: 12px;
+        padding: 3px 10px;
+    }
+
+    #board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        min-height: 150px;
+    }
+
+    .cell {
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    .btn-primary {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .btn-start {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .stats-grid p {
+        font-size: 10px;
+    }
+}
