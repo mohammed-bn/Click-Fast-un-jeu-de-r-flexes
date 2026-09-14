@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/jeux.css">
 </head>
+
 <body>
 
     <div class="game-container">
@@ -21,23 +23,19 @@
 
         <button id="startGame" class="btn-primary">Start The Game</button>
 
-        <div class="results-card">
-            <h3>Result Summary</h3>
-            <div class="stats-grid">
-                <p id="totalAttemps">Total attempts: 0</p>
-                <p id="correctClick">Correct clicks: 0</p>
-                <p id="missClick">Miss clicks: 0</p>
-                <p id="ignoreClick">Miss clicks: 0</p>
-            </div>
+        <div id="resultCard" class="result-card">
+            <h2>Résultat</h2>
+
+            <p>Score : <span id="resultScore">0</span></p>
+            <p>Bonnes réponses : <span id="resultCorrect">0</span></p>
+            <p>Mauvais clics : <span id="resultMiss">0</span></p>
+            <p>Total des clics : <span id="resultAttempts">0</span></p>
+
+            <button id="next">Next Level</button>
         </div>
 
-        <button class="btn-start" id="next">
-            <i class="fas fa-play"></i> Next >>>   
-        </button>
 
-    </div>
-
-
-    <script src="/ScriptJs/main.js"></script>
+        <script src="/ScriptJs/main.js"></script>
 </body>
+
 </html>

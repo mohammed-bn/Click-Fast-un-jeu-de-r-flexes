@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #111;
+    padding: 20px 40px;
+    border-bottom: 2px solid #ff6b00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+header .logo-icon {
+    font-size: 30px;
+}
+
+header .logo-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 24px;
+    font-weight: 900;
+    color: #ff6b00;
+}
+
+header .logo-text span {
+    color: #fff;
+}
+
+header nav {
+    display: flex;
+    gap: 5px;
+}
+
+header nav a {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #ff6b00;
+    background: rgba(255, 107, 0, 0.1);
+}
+
+header nav a.active {
+    color: #ff6b00;
+    background: rgba(255, 107, 0, 0.15);
+}
+
+main {
+    flex: 1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 45px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #ff6b00;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+
+.records {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.record-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 15px;
+    padding: 30px 20px;
+    transition: 0.3s;
+}
+
+.record-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff6b00;
+    box-shadow: 0 10px 35px rgba(255, 107, 0, 0.2);
+}
+
+.record-card .level {
+    color: #ff6b00;
+    font-family: 'Orbitron', monospace;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.record-card .icon {
+    font-size: 35px;
+    margin: 20px 0;
+}
+
+.record-card h2 {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.record-card p {
+    color: #fff;
+    font-family: 'Orbitron', monospace;
+    font-size: 50px;
+    font-weight: 900;
+    margin: 5px 0 10px;
+}
+
+.record-card span {
+    color: #555;
+    font-size: 14px;
+}
+
+footer {
+    background: #111;
+    padding: 20px 40px;
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    color: #555;
+}
+
+footer p i {
+    color: #ff6b00;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    header .logo-text {
+        font-size: 20px;
+    }
+
+    header nav a {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    main h1 {
+        font-size: 35px;
+    }
+
+    .records {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 12px 15px;
+    }
+
+    header .logo-icon {
+        font-size: 22px;
+    }
+
+    header .logo-text {
+        font-size: 16px;
+    }
+
+    header nav a {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+
+    main h1 {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .record-card p {
+        font-size: 42px;
+    }
+}

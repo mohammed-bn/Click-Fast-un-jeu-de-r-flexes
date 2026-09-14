@@ -201,6 +201,10 @@ footer p .heart {
     background: #ff8c00;
 }
 
+.result-card {
+    display: none;
+}
+
 /* ============================================
    RESPONSIVE
    ============================================ */
